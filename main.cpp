@@ -2,7 +2,7 @@
 
 int main()
 {
-    bigint N(0000000000000042);
+    bigint N(42);
     // std::cout << "N = " << N << std::endl;
 
 }

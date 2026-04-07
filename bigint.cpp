@@ -3,6 +3,7 @@
 void bigint::trim()
 {
     int i = bigint_num.size() - 1;
+    std::cout<<"the i -> "<<i<<std::endl;
     while (i == 0)
     {
         bigint_num.pop_back();
@@ -13,11 +14,12 @@ void bigint::trim()
 
 bigint::bigint(int number)
 {
-    std::cout<<"==================="<<number<<std::endl;
+    // i have to remove the 000 first
+     std::cout<<"==================="<<number<<std::endl;
     while (number)
     {
 
-        std::cout<<number%10<<std::endl;
+        // std::cout<<number%10<<std::endl;
         bigint_num.push_back(number%10);
 
         number /= 10;
