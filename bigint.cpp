@@ -1,10 +1,16 @@
 #include "bigint.hpp"
 
+bigint::bigint(const bigint& other)
+{
+    for (std::vector<int>::const_iterator i = other.bigint_num.begin(); i != other.bigint_num.end(); ++i)
+    {
+        bigint_num.push_back(*i);
+    } 
+}
 void bigint::trim()
 {
-    int i = bigint_num.size() - 1;
-    std::cout<<"the i -> "<<i<<std::endl;
-    while (i == 0)
+    int i = bigint_num.size();
+    while (i > 1 && bigint_num[i] == 0)
     {
         bigint_num.pop_back();
         i--;
@@ -12,10 +18,9 @@ void bigint::trim()
 }
 
 
-bigint::bigint(int number)
+bigint::bigint(unsigned int number)
 {
     // i have to remove the 000 first
-     std::cout<<"==================="<<number<<std::endl;
     while (number)
     {
 
@@ -32,24 +37,45 @@ bigint::bigint(int number)
     
 }
 
-void bigint::print(std::ostream& os)const
+void bigint::print(std::ostream& os)
 {
     
     for (std::vector<int>::const_reverse_iterator i = bigint_num.rbegin(); i != bigint_num.rend(); i++)
     {
+        trim();
         os<<*i;
     }
 }
 
 std::ostream& operator<<(std::ostream& os, const bigint& obj)
 {
-    obj.print(os);
+   bigint& non_cast = const_cast<bigint&>(obj);
+   non_cast.print(os);
     return os;
 }
 
 
+bigint bigint::operator>>(int shift_num) const
+{
+
+}
+
+
+bigint bigint::operator<<(int shift_num) const
+{
+    bigint new_obj(*this);
+    for (size_t i = 0; i < new_obj.bigint_num.size(); i++)
+    {
+        
+    }
+    
+
+}
+
 bigint::~bigint()
 {
 }
+
+
 
 

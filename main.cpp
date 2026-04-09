@@ -3,6 +3,6 @@
 int main()
 {
     bigint N(42);
-    // std::cout << "N = " << N << std::endl;
+    std::cout << "N = " << N << std::endl;
 
 }
