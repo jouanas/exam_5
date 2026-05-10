@@ -12,6 +12,10 @@ class bigint
 {
     private:
         std::vector<int> bigint_num;
+        void pushToNumber(bigint& obj, unsigned int number);
+        unsigned int ConvertToUnsignedInt(const bigint& obj) const;
+
+
     public:
         bigint();
         bigint(unsigned int);
@@ -21,10 +25,10 @@ class bigint
         void trim();
         void print(std::ostream& os) const;
 
-        bigint operator<<(unsigned int shift_num) const;
-        bigint operator>>(unsigned int shift_num) const;
-        bigint& operator>>=(unsigned int shift_num);
-        bigint& operator<<=(unsigned int shift_num);
+        bigint operator<<(const bigint& obj) const;
+        bigint operator>>(const bigint& obj) const;
+        bigint& operator>>=(const bigint&);
+        bigint& operator<<=(const bigint&);
         bigint operator+(const bigint& other) const;
         bigint& operator+=(const bigint& other);
         bigint& operator++();
@@ -35,6 +39,7 @@ class bigint
         bool operator>=(const bigint& other) const;
         bool operator==(const bigint& other) const;
         bool operator!=(const bigint& other) const;
+
 
 
 };
