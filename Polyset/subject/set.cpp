@@ -1,6 +1,6 @@
 #include "set.hpp"
 
-set::set(/* args */)
+set::set()
 {
      Bag = nullptr;
 }

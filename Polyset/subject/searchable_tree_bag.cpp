@@ -1,6 +1,6 @@
 #include "searchable_tree_bag.hpp"
 
-searchable_tree_bag::searchable_tree_bag(/* args */)
+searchable_tree_bag::searchable_tree_bag()
 {
 }
 
@@ -39,7 +39,3 @@ searchable_tree_bag& searchable_tree_bag::operator=(const searchable_tree_bag& o
     return *this;
 }
 
-searchable_bag* searchable_tree_bag::clone()
-{
-    return new searchable_tree_bag();
-}
