@@ -32,8 +32,11 @@ set& set::operator=(const set& other)
 
 void set::insert(int value)
 {
-    if (!Bag->has(value))
-        Bag->insert(value);
+    if (Bag)
+    {
+        if (!Bag->has(value))
+            Bag->insert(value);
+    }
 }
 
 void set::insert(int *array, int size)
@@ -44,18 +47,21 @@ void set::insert(int *array, int size)
 
 bool set::has(int value) const
 {
-     return Bag->has(value);
+    
+        return Bag && Bag->has(value);
 }
 
 void set::print() const
 {
-    Bag->print();
+    if (Bag)
+        Bag->print();
 }
 
 
 void set::clear()
 {
-    Bag->clear();
+    if (Bag)
+        Bag->clear();
 }
 
 

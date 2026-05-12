@@ -15,5 +15,6 @@ public:
     searchable_tree_bag(const searchable_tree_bag& other);
     searchable_tree_bag& operator=(const searchable_tree_bag& other);
     ~searchable_tree_bag();
+    searchable_bag* clone();
 	virtual bool has(int) const ;
 };

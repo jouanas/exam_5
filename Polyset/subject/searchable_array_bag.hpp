@@ -16,6 +16,8 @@ public:
     searchable_array_bag(const searchable_array_bag& other);
     searchable_array_bag& operator=(const searchable_array_bag& other);
 	virtual bool has(int) const ;
+    searchable_bag* clone();
+
 
 };
 

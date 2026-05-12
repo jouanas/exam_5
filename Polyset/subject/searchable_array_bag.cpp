@@ -31,3 +31,9 @@ searchable_array_bag& searchable_array_bag::operator=(const searchable_array_bag
     
     return *this;
 }
+
+
+searchable_bag* searchable_array_bag::clone()
+{
+    return new searchable_array_bag();
+}
